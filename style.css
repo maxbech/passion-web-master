@@ -1,0 +1,490 @@
+/* Generelt */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+html {
+  background-color: #eef4e8;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* fonts */
+@font-face {
+  font-family: Arial, Helvetica, sans-serif;
+  src: url(fonts/BebasNeue/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+  font-family: Arial, Helvetica, sans-serif;
+  src: url(fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf);
+}
+
+/* *********** Header ************** */
+/* Gør header bliver i toppen */
+.banner {
+  position: fixed;
+  z-index: 1;
+}
+
+/* Placering af logo - giver luft */
+.logo {
+  margin-inline: 40px;
+}
+
+/* styling af listen i nav-menu */
+.nav-menu li {
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  list-style: none;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-right: 20px;
+}
+
+/* styling af teksten i nav-menu */
+a {
+  color: #2d3a72;
+  text-decoration: none;
+}
+
+/* Hover til knapper */
+.nav-item a:hover {
+  color: #045b5b;
+}
+
+/* Styling af header */
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* Styling af ul, så de ligger ved siden af hinanden */
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 85px;
+}
+
+/* animation af header der flyver ud */
+.nav-link {
+  transition: 0.7s ease;
+}
+
+/* hover til banner - index & loop */
+.banner:hover {
+  background-color: white;
+}
+
+/* Hover til banner - enkelt */
+.banner_enkelt:hover {
+  background-color: white;
+}
+
+/* Gør burgermenu ikke vises hele tiden */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-block: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #221b80;
+  border-radius: 15px;
+}
+/* hamburger menu viser sig kun indtil den kommer over ipad størrelse */
+@media (max-width: 810px) {
+  .logo {
+    margin-inline: 0;
+  }
+
+  .logo img {
+    width: 30%;
+  }
+  .navbar {
+    padding: 20px;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 89px;
+    gap: 0;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .nav-item {
+    margin-block: 16px;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+}
+
+/*************** main (filtrering/loop view) *********/
+/* grid - loop view */
+.loop_section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 4fr));
+  gap: 1rem;
+}
+
+/* design filtreringsheader - loop view */
+
+.filteringsheader {
+  text-align: center;
+}
+
+nav {
+  list-style: none;
+  line-height: 2rem;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #331374;
+  font-size: 2 rem;
+  border-style: none;
+  background-color: #eef4e8;
+  font-weight: lighter;
+  cursor: pointer;
+  padding: 10px;
+}
+
+button:hover {
+  color: #0b093b;
+}
+
+.valgt {
+  color: #08114d;
+}
+
+.filteringsheader h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #aac210;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding-bottom: 15px;
+}
+
+.filteringsheader h1 {
+  font-family: SIL;
+  color: #aec71d;
+  font-size: 3rem;
+  padding-top: 100px;
+}
+
+/* design indhold - loop view */
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 15px;
+}
+h1,
+h2,
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 15px;
+}
+
+/* hover box */
+.h_container {
+  position: relative;
+  width: 100%;
+  background-color: black;
+}
+
+.picture {
+  /* opacity: 1; */
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+}
+
+/* placering og styling af text-boksen */
+.box {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* hover effekt på billede */
+.h_container:hover .picture {
+  background-color: black;
+  opacity: 0.3;
+}
+
+/* Gør tekst-boksen synlig */
+.h_container:hover .box {
+  opacity: 1;
+}
+
+/* styling af teksten */
+.text_p {
+  color: white;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  /* Gør at der ikke kommer en ny linje */
+  white-space: nowrap;
+  /* Gør man ikke se resten af teksten */
+  overflow: hidden;
+  /* ellipsis laver de tre prikker (...) */
+  text-overflow: ellipsis;
+  /* Siger hvor meget tekst vi må se  */
+  max-width: 20ch;
+}
+
+/* Styling af h3 */
+.text_h3 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* styling af Call-to-action knap */
+.red {
+  color: #845208;
+  text-align: center;
+  margin-block: 20px;
+}
+.facebook,
+.instagram {
+  width: 100px;
+  height: auto;
+}
+
+.RM {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #1e135c;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border-color: black solid 0.5px;
+}
+
+/* footer */
+footer {
+  background-color: #171a76;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+footer p {
+  color: white;
+}
+
+.footer_h2 {
+  color: white;
+  font-style: italic;
+}
+.footer_div,
+.sporgsmal {
+  text-align: center;
+}
+
+.info_footer h2,
+.sporgsmal h2 {
+  color: white;
+  font-style: italic;
+}
+
+/****** ENKELTSIDE *******/
+
+.grid_1-1 {
+  margin-bottom: 20px;
+  margin-top: -90px;
+}
+.grid_1-1 img {
+  margin-top: 100px;
+}
+
+.grid_1-1 article {
+  padding-top: 20px;
+  background-color: white;
+}
+
+.grid_1-1 h1 {
+  text-align: left;
+  color: #122568;
+  font-size: 4rem;
+  padding-left: 20px;
+  font-style: italic;
+}
+.grid_1-1 p {
+  padding-inline: 20px;
+  line-height: 2rem;
+  padding-bottom: 20px;
+}
+.grid_1-1 h2 {
+  color: #085c14;
+  font-size: 2.5rem;
+  padding-left: 20px;
+}
+
+.grid_1-1 h3 {
+  font-size: 1.5rem;
+  color: #231f6e;
+  padding-left: 20px;
+}
+
+.grid_1-1 article h1 {
+  flex: 1;
+}
+
+.banner {
+  position: fixed;
+}
+
+.bg-dark {
+  background: transparent !important;
+}
+
+.bg-dark.scrolled {
+  background-color: white !important;
+}
+
+.tilbage {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #181e68;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  display: none;
+}
+.tilbage_mobil {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #20196c;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  margin-left: 40%;
+  margin-top: 20px;
+}
+
+.sporgsmal p {
+  max-width: 25ch;
+}
+
+@media (min-width: 768px) {
+  /* enkeltside */
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 13rem;
+    padding-bottom: 6rem;
+  }
+
+  .grid_1-1 img {
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 0;
+  }
+  .grid_1-1 article {
+    grid-column: 2;
+  }
+
+  .grid_1-1 h1 {
+    text-align: left;
+    /* margin-top: -8px; */
+  }
+  .tilbage {
+    display: block;
+  }
+
+  .button_div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1/2;
+    grid-row: 1;
+  }
+  .tilbage_mobil {
+    margin-left: 0;
+    width: 110px;
+  }
+
+  /* Loop view */
+  .logo > img:nth-child(1) {
+    max-width: 20%;
+    padding-top: 10px;
+  }
+
+  footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  address:nth-child(1) {
+    text-align: left;
+  }
+
+  .banner {
+    position: fixed;
+  }
+
+  .banner_enkelt {
+    position: fixed;
+    padding-top: 5rem;
+  }
+
+  .logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sporgsmal {
+    margin-left: 5rem;
+  }
+
+  .sporgsmal p {
+    max-width: 25ch;
+  }
+
+  .socials {
+    margin-left: 2rem;
+  }
+}

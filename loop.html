@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TRAVEL FRIEND</title>
+  </head>
+  <body>
+    <header class="banner">
+      <nav class="navbar">
+        <a class="logo" href="index.html"
+          ><img src="billeder/logo.png" alt="logo"
+        /></a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="loop.html">EXPLORE</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">TIPS</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">ABOUT</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <div class="filteringsheader">
+      <h1>EXPLORE</h1>
+      <nav>
+        <button data-land="alle" class="valgt">Alle</button>
+        <button data-land="New Zealand">New Zealand</button>
+        <button data-land="Alaska">Alaska</button>
+        <button data-land="Serbia">Serbia</button>
+        <button data-land="Norway">Norway</button>
+      </nav>
+      <h2>Alle</h2>
+    </div>
+
+    <main>
+      <!-- section er der indholdet fra templaten kommer i -->
+      <section class="loop_section"></section>
+      <template>
+        <article>
+          <div class="h_container">
+            <img src="" alt="" class="picture" />
+            <div class="box">
+              <h3 class="text_h3"></h3>
+              <p class="text_p"></p>
+              <button class="RM">Read More</button>
+            </div>
+          </div>
+          <h2 class="red"></h2>
+        </article>
+      </template>
+    </main>
+    <footer>
+      <div>
+        <h2 class="footer_h2">TRAVEL FRIEND HEADQUARTERS</h2>
+        <p>+45 99 00 99 00</p>
+        <p>
+          Guldbergsgade 29N <br />
+          2200 Copenhagen N
+        </p>
+      </div>
+      <div class="socials">
+        <div class="socials">
+          <img src="billeder/facebook-logo.png" alt="face" />
+          <img src="billeder/instagram-logo.png" alt="insta" />
+        </div>
+      </div>
+      <section class="sporgsmal">
+        <h2>Questions?</h2>
+        <p>DM US ON FACEBOOK OR INSTAGRAM FOR QUESTIONS!</p>
+      </section>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

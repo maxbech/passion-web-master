@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="landing_style.css" />
+    <title>TRAVEL FRIEND</title>
+  </head>
+  <body>
+    <header class="banner">
+      <nav class="navbar">
+        <a class="logo" href="index.html"></a>
+        <a class="logo" href=""><img src="billeder/logo.png" alt="logo" /></a>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="loop.html">EXPLORE</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">TIPS</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">ABOUT</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <div class="background-image">
+      <h1 class="landing_h1">TRAVEL FRIEND <br /></h1>
+      <div class="container_mouse">
+        <span class="mouse-btn">
+          <span class="mouse-scroll"></span>
+        </span>
+        <h1>Scroll Down</h1>
+      </div>
+    </div>
+    <main>
+      <section class="landing_titel">
+        <h2>WORLDS BEST HIKING GUIDE</h2>
+        <h3>POPULAR HIKES</h3>
+      </section>
+
+      <section class="tophikes">
+        <article>
+          <a href="loop.html">
+            <img src="billeder/newzealand_hike.webp" alt="hiking"
+          /></a>
+          <h2>NEW ZEALAND</h2>
+          <p>
+            Mount Cook National Park is one of the most breathtaking and popular
+            national parks in New Zealand.
+          </p>
+        </article>
+
+        <article>
+          <a href="loop.html">
+            <img src="billeder/serbia_hike.webp" alt="hiking"
+          /></a>
+          <h2>SERBIA</h2>
+          <p>
+            Our favorite hike in Kotor, Montenegro was the trek that took us
+            from Kotor to Tivat.
+          </p>
+        </article>
+
+        <article>
+          <a href="loop.html">
+            <img src="billeder/glacier_hike.webp" alt="glacier"
+          /></a>
+          <h2>ALASKA</h2>
+          <p>
+            This trail is worth the climb: you’ll find excellent views of
+            Gastineau Channel, Juneau, and Douglas from here
+          </p>
+        </article>
+      </section>
+      <div class="text-center">
+        <a href="loop.html"><button>SEE ALL</button></a>
+      </div>
+    </main>
+    <footer>
+      <div class="footer_div">
+        <h2 class="footer_h2">TRAVEL FRIEND HEADQUARTERS</h2>
+        <p>+45 99 00 99 00</p>
+        <p>
+          Guldbergsgade 29N <br />
+          2200 Copenhagen N
+        </p>
+      </div>
+      <div class="socials">
+        <div class="socials">
+          <img src="billeder/facebook-logo.png" alt="face" />
+          <img src="billeder/instagram-logo.png" alt="insta" />
+        </div>
+      </div>
+      <section class="sporgsmal">
+        <h2>Questions?</h2>
+        <p>DM US ON FACEBOOK OR INSTAGRAM FOR QUESTIONS!</p>
+      </section>
+    </footer>
+    <script>
+      // Hamburger menu
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+    </script>
+  </body>
+</html>
